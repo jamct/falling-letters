@@ -3,6 +3,8 @@
 
 Fallblattanzeigen an Bahnhöfen und Flughäfen faszinieren nicht nur Kinder und Eisenbahnfans – an die klackernden Anzeigen erinnern sich viele gern zurück, die vor den Zweitausendernjahren mit dem Zug gefahren sind. Heute gibt es sie nur noch selten, aus Bahnhöfen sind sie weitestgehend verschwunden, nur in einigen Flughäfen zeigen sie noch die FLugziele an. Die gebrauchten Module sind in großen Stückzahlen bei Sammlern und in Kleinanzeigen gelandet.
 
+![](images/main.png)
+
 In c’t 13/2022 beschreiben wir, wie wir 10 alphanumerische Fallblattmoodule des Herstellers ADtranz gekauft und analyisert haben. Sie stammen von der Deutschen Bahn und zeigen Buchstaben, Zahlen und Sonderzeichen. Dabei sind wir auf das eher seltene Binärcode-Verfahren namens Gray-Code gestoßen. Wer sich für Informatik-Grundlagen interessiert, wird im ausführlichen Artikel fündig. In diesem Repository finden alljene Informationen, die selbst solche Module ergattern konnten (oder noch im Keller liegen haben) und sie zum Leben erwecken wollen. Wir teilen unsere Erkenntnisse, Bilder und Code mit Ihnen – alles, was zum Nachbasteln hilfreich ist. Diese Dokumentation ist dabei nicht abgeschlossen, sondern dokumentiert ein laufendes Bastelprojekt. Wir freuen uns über Ihre Erkenntnisse, Anwendungsfälle und Verbesserungsvorschläge hier bei GitHub oder per Mail an jam@ct.de
 
 ## Beschaffung
@@ -32,3 +34,22 @@ Tipp: Fürs Reverse-Engineering und Programmieren nicht auf die Stecker aus den 
 
 ## Elektronik: Pinbelegung
 
+Insgesamt kommen drei Spannungslevel vor. Der Motor braucht 24 Volt Wechselspannung (läuft ab etwa 12 Volt). Die Auswertung der Lichtschranke läuft zwischen 20 und 24 Volt Wechselspannung. Die sieben Digitalausgänge schließlich geben 0 oder 5 Volt zurück. Das muss die Auswertungselektronik (Arduino, ...) später verarbeiten.
+
+![](images/pins.png)
+
+| Pin | Belegung |
+| --- | --- |
+| 1/2 | 24V DC - |
+| 3/4 | 24V DC + |
+| - | - |
+| 5 | Code 6 |
+| 6 | Code 5 |
+| 7 | Code 4 |
+| 8 | Code 3 |
+| 9 | Code 2 |
+| 10 | Code 1 |
+| 11 | Code 0 |
+| 12 | Relais |
+| 13 | 24V AC |
+| 14 | 24V AC |
